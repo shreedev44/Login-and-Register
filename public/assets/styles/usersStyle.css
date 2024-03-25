@@ -1,0 +1,35 @@
+@font-face {
+    font-family: username;
+    src: url('/fonts/ethnocentric rg.otf');
+}
+
+body {
+    background: url('/images/11.jpg') no-repeat center fixed;
+    background-size: cover;
+}
+
+
+.wel {
+    font-size: 2rem;
+}
+
+.user {
+    font-family: username;
+    color: blanchedalmond;
+}
+
+@media(max-width:870px) {
+
+    .brand1,
+    .brand2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media(max-width:430px) {
+
+    .brand2,
+    .brand1 {
+        font-size: 1.5rem;
+    }
+}

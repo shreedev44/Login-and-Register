@@ -1,0 +1,66 @@
+@font-face {
+    font-family: nurburgring;
+    src: url('/fonts/NotesStyleNbr-Brand.ttf');
+}
+
+@font-face {
+    font-family: automobile;
+    src: url('/fonts/GranTorino-ALKDL.otf');
+}
+
+@font-face {
+    font-family: username;
+    src: url('/fonts/ethnocentric rg.otf');
+}
+
+body {
+    background: url('/images/7.jpg') no-repeat center fixed;
+    background-size: cover;
+}
+
+#nurb-logo {
+    object-fit: cover;
+    height: 8vh;
+}
+
+.brand1 {
+    font-family: nurburgring;
+    font-size: 3.5rem;
+    color: rgb(255, 255, 255);
+}
+
+.brand2 {
+    font-size: 3.5rem;
+    font-family: automobile;
+    color: rgb(255, 255, 255);
+}
+
+.wel {
+    font-size: 2rem;
+}
+
+.garage {
+    font-family: automobile;
+    font-size: 2rem;
+}
+
+.user {
+    font-family: username;
+    color: blanchedalmond;
+}
+
+@media(max-width:870px) {
+
+    .brand1,
+    .brand2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media(max-width:430px) {
+
+    .brand2,
+    .brand1 {
+        font-size: 1.5rem;
+    }
+}

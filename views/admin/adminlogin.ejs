@@ -1,0 +1,75 @@
+<%- include('../layouts/header') -%>
+<link href="/assets/styles/adminloginStyle.css" rel="stylesheet">
+
+
+<header class="container-fluid mt-5 justify-content-center text-center">
+    <img id="nurb-logo" class="img-fluid d-inline" src="/images/logo-nuerburgring-circuit.svg" alt="">
+    <p class="brand1 d-inline">Nordschleife</p>
+    <p class="brand2 d-inline">Automobiles</p>
+</header> 
+<section>
+    <div class="mt-5 pt-5">
+        <div class="row container-fluid m-auto">
+            <div class="col-12 col-sm-8 col-md-8 col-lg-4 m-auto container-fluid">
+                <div id="card" class="card rounded-5">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center mt-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                            </svg>
+                        </div>
+                        <div class="h2 text-center mt-3 mb-4 text-light">
+                            Admin Login
+                        </div>
+                        <% if(locals.logoutStatus == 'success'){ %>
+                            <div class="text-center bg-info mx-4 rounded-pill">
+                                <span class="text-success h4">Logout Successfully</span>
+                            </div>
+                        <% }%>
+                        <form action="/admin/login" method="POST" id="LoginForm">
+                            <div class="form-control rounded-1 d-grid my-2">
+                                <input name="email" type="text" class="my-2 user" placeholder="Email" required>
+                            </div>
+                            <div class="">
+                                <p></p>
+                            </div>
+                            <div class="form-control rounded-1 d-grid pass">
+                                <input name="password" id="password" type="password" class="my-2 border-0" placeholder="Password" required>
+                                <i class="bi bi-eye-slash" id="togglePassword"></i>
+
+                            </div>
+                            <div class="text-center d-grid">
+                                <button type="submit" class="btn btn-lg btn-dark mt-4 mb-2 mx-5 py-2 rounded-pill login-button">Login</button>
+                                
+                            </div>
+
+                            <div class="text-center mb-1">
+                                <span id="invalid-email" style="display: none;" class="text-danger">Please Enter a valid email</span>
+                            </div>
+
+                            <div class="text-center mb-2">
+                                <span id="invalid-password" style="display: none;" class="text-danger">Password must contain minimum 8 characters</span>
+                            </div>
+
+                            <% if(locals.PasswordStatus == 'failed') {%>
+                                <div class="text-center mb-2">
+                                    <span class="text-danger">Incorrect Password</span>
+                                </div>
+                            <% } else if(locals.AdminStatus == 'failed') { %>
+                                <div class="text-center mb-2">
+                                    <span class="text-danger">Admin not Found</span>
+                                </div>
+                            <% } %>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<script src="/assets/scripts/loginScript.js"></script>
+<!--Bootstrap-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<%- include('../layouts/footer') -%>
