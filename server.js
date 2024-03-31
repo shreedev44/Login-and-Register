@@ -6,7 +6,8 @@ const userRoute = require("./routes/usersRoutes");
 const adminRoute = require("./routes/adminRoutes");
 require('dotenv').config({path: './variables.env'})
 
-// mongoose.connect("mongodb://localhost:27017/userDatabase");
+
+
 mongoose.connect(process.env.DATABASE_URL)
 .then(() => console.log('MongoDB connected'))
 
