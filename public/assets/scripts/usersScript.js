@@ -4,6 +4,7 @@ document.getElementById('deleteModal').addEventListener('show.bs.modal', (event)
     const userId = button.getAttribute('data-user-id');
     document.getElementById('confirmDelete').onclick = () => {
         deleteUser(userId);
+        console.log(deleteUser);
     };
 });
 
